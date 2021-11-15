@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&family=Source+Code+Pro:wght@500&display=swap');
+
+body {
+	background: linear-gradient(225.75deg, #DCDEE0 -10.55%, rgba(196, 196, 196, 0) 106.02%);
+	font-family: 'Noto Sans Display', sans-serif;
+	font-size: 36px;
+	color: #262626;
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 4.2vw;
+	/* font-size: 60px; */
+	margin-top: 0px;
+}
+
+p
+{
+	font-size: 40px;
+}
+
+.box
+{
+	border: 2px solid #262626;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.subtitle
+{
+	font-size: 24px;
+}
+
+.content-card
+{
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	/* left: 275px; */
+	left: 30%;
+	top: -10%;
+	transform: rotate(-5deg);
+	background-color: #FF6838;
+
+	padding-top: 20%;
+	padding-right: 5%;
+	padding-left: 5%;
+}
+
+.horizontal-line
+{
+	display: "inline-block";
+	height: 15px;
+	background-color: #262626;
+}
