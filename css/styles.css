@@ -9,14 +9,23 @@ body {
 }
 
 h1 {
-	font-size: 4.2vw;
+	font-size: 190%;
 	/* font-size: 60px; */
+	
 	margin-top: 0px;
 }
 
-p
+.menu-item
 {
-	font-size: 40px;
+	font-size: 120%;
+	/* font-size: 40px; */
+	margin-top: 7%;
+	margin-bottom: 7%;
+	transition: all 0.5s;
+}
+.menu-item:hover
+{
+	transform: translate(5%);
 }
 
 .box
@@ -30,7 +39,8 @@ p
 
 .subtitle
 {
-	font-size: 24px;
+	/* font-size: 1.3vw; */
+	font-size: 50%;
 }
 
 .content-card
@@ -39,14 +49,20 @@ p
 	width: 25%;
 	height: 100%;
 	/* left: 275px; */
-	left: 30%;
+	left: 32.5%;
 	top: -10%;
 	transform: rotate(-5deg);
 	background-color: #FF6838;
 
-	padding-top: 20%;
+	padding-top: 15%;
 	padding-right: 5%;
 	padding-left: 5%;
+
+	transition: all 1s;
+}
+
+.content-card:hover
+{
 }
 
 .horizontal-line
