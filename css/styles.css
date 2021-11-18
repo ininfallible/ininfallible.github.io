@@ -51,8 +51,9 @@ h1 {
 	/* left: 275px; */
 	left: 32.5%;
 	top: -10%;
-	transform: rotate(-5deg);
 	background-color: #FF6838;
+
+	transform: rotate(-5deg);
 
 	padding-top: 15%;
 	padding-right: 5%;
@@ -61,13 +62,17 @@ h1 {
 	transition: all 1s;
 }
 
-.content-card:hover
-{
-}
-
 .horizontal-line
 {
 	display: "inline-block";
 	height: 15px;
 	background-color: #262626;
+}
+
+.info-box
+{
+	position: absolute;
+	left: 25%;
+	top: 10%;
+	width: 60%;
 }

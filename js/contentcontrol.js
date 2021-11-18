@@ -1,6 +1,12 @@
 // pages are home, experience, education, misc
 var currentPage = "home";
 
+/* 
+$( document ).ready(function() {
+	updatePage();
+});
+*/ 
+
 $( ".menu-item" ).click(function() {
 	currentPage = $(this).attr("id").trim();
 	updatePage();
@@ -11,35 +17,55 @@ $( "h1" ).click(function() {
 	updatePage();
 });
 
+async function fetchHtmlAsText(url) {
+    return await (await fetch(url)).text();
+}
+
 function updatePage() {
-	alert(currentPage);
+	// alert(currentPage);
+	console.log("switching to page: " + currentPage);
+
 	switch(currentPage)
 	{
 		case "experience":
-			$( ".text-box" ).text("experience");
-			updateContentCard();
+			// $( ".info-box" ).html($.ajax("experience.html", {mimeType: 'text/html'}));
+			$( ".info-box").load("experience.html");
+			// $( ".info-box" ).text("education");
 			break;
 		case "education":
-			$( ".text-box" ).text("education");
-			updateContentCard();
+			$( ".info-box" ).text("education");
 			break;
 		case "misc":
-			$( ".text-box" ).text("misc");
-			updateContentCard();
+			$( ".info-box" ).text("misc");
 			break;
 		case "home":
-			$( ".text-box" ).text("misc");
-			updateContentCard();
+			$( ".info-box" ).text("home");
 			break;
 	}
+
+	if (currentPage != "home")
+	{
+		$( ".info-box" ).css({"visibility": "visible"});
+	}
+	else
+	{
+		$( ".info-box" ).css({"visibility": "hidden"});
+	}
+	// $( "#info-box" ).load("test.html");
+
+	updateContentCard();
 }
 function updateContentCard()
 {
 	if (currentPage == "home")
 	{
-		$( ".content-card" ).css(
-			"transform", "rotate(-10deg)"
-		);
+		$( ".content-card" ).css({
+			"transform": "rotate(-10deg)",
+			"left": "32.5%",
+			"padding-left": "5%",
+			"padding-right": "5%",
+			"width": "25%"
+		});
 		// TODO: make nav reversible
 	}
 	else
@@ -49,7 +75,7 @@ function updateContentCard()
 			"left": "0px",
 			"padding-left": "3%",
 			"padding-right": "3%",
-			"width": "20%"
+			"width": "15%"
 		});
 		$( "h1" ).text("DJ");
 	}
