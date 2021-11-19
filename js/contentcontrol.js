@@ -25,48 +25,43 @@ function updatePage() {
 	// alert(currentPage);
 	console.log("switching to page: " + currentPage);
 
+	updateContentCard();
+
 	switch(currentPage)
 	{
-		case "experience":
-			// $( ".info-box" ).html($.ajax("experience.html", {mimeType: 'text/html'}));
-			$( ".info-box").load("experience.html");
-			// $( ".info-box" ).text("education");
-			break;
-		case "education":
-			$( ".info-box" ).text("education");
-			break;
-		case "misc":
-			$( ".info-box" ).text("misc");
-			break;
 		case "home":
-			$( ".info-box" ).text("home");
+			$( "#info-box" ).text("home");
+			break;
+		default:
+			$( "#info-box").load(`content.html #${currentPage}`);
 			break;
 	}
 
 	if (currentPage != "home")
 	{
-		$( ".info-box" ).css({"visibility": "visible"});
+		// $( "#info-box" ).delay( 1000 ).css({"visibility": "visible"});
+		// $( "#info-box" ).css({"visibility": "visible"});
+		$( "#info-box" ).delay( 800 ).fadeIn( 200 );
 	}
 	else
 	{
-		$( ".info-box" ).css({"visibility": "hidden"});
+		// $( "#info-box" ).css({"visibility": "hidden"});
+		$( "#info-box" ).hide();
 	}
 	// $( "#info-box" ).load("test.html");
 
-	updateContentCard();
 }
 function updateContentCard()
 {
 	if (currentPage == "home")
 	{
 		$( ".content-card" ).css({
-			"transform": "rotate(-10deg)",
+			"transform": "rotate(-5deg)",
 			"left": "32.5%",
 			"padding-left": "5%",
 			"padding-right": "5%",
 			"width": "25%"
 		});
-		// TODO: make nav reversible
 	}
 	else
 	{
@@ -77,7 +72,7 @@ function updateContentCard()
 			"padding-right": "3%",
 			"width": "15%"
 		});
-		$( "h1" ).text("DJ");
+		// $( "h1" ).text("DJ");
 	}
 }
 
